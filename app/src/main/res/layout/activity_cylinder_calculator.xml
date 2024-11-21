@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".CylinderCalculator"
-    android:layout_marginVertical="10dp">
+    android:layout_marginTop="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,11 +17,34 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginHorizontal="20dp">
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/arrow_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_back_icon"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Калькулятор цилиндра"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:src="@drawable/cylinder"
                 android:layout_alignParentStart="true"/>
 
@@ -36,7 +59,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Цилиндр"
+                    android:text="Обозначения:"
                     android:textSize="25sp"/>
 
                 <TextView

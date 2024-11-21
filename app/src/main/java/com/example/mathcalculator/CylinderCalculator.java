@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,6 +64,14 @@ public class CylinderCalculator extends AppCompatActivity {
                             Toast.LENGTH_SHORT
                     ).show();
                 }
+            }
+        });
+
+        ImageView arrowBack = findViewById(R.id.arrow_back);
+        arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
