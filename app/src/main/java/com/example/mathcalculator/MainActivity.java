@@ -14,8 +14,6 @@ import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MaterialCardView cylinderCard;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        cylinderCard = findViewById(R.id.cylinder_card);
+        MaterialCardView cylinderCard = findViewById(R.id.cylinder_card);
         cylinderCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,5 +33,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        MaterialCardView coneCard = findViewById(R.id.cone_card);
+        coneCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ConeCalculator.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

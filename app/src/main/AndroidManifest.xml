@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MathCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".ConeCalculator"
+            android:exported="false" />
+        <activity
             android:name=".CylinderCalculator"
             android:exported="false" />
         <activity
