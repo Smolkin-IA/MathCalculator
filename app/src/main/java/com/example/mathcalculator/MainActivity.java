@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        MaterialCardView triangleCard = findViewById(R.id.triangle_card);
+        triangleCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TriangleCalculator.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
