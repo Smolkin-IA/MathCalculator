@@ -81,6 +81,5 @@ public class ConeCalculator extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

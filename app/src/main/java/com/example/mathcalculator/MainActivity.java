@@ -43,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        MaterialCardView sphereCard = findViewById(R.id.sphere_card);
+        sphereCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SphereCalculator.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
