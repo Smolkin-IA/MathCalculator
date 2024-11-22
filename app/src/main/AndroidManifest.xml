@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MathCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".QuadraticEquationCalculator"
+            android:exported="false" />
+        <activity
             android:name=".TriangleCalculator"
             android:exported="false" />
         <activity

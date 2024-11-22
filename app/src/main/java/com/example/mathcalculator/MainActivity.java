@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        MaterialCardView quadraticEquationCard = findViewById(R.id.quadratic_equation_card);
+        quadraticEquationCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, QuadraticEquationCalculator.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
