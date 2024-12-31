@@ -126,7 +126,7 @@
                         android:id="@+id/h_value"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:inputType="number"/>
+                        android:inputType="numberDecimal"/>
 
                 </LinearLayout>
 
@@ -146,7 +146,7 @@
                         android:id="@+id/r_value"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:inputType="number"/>
+                        android:inputType="numberDecimal"/>
 
                 </LinearLayout>
             </LinearLayout>
