@@ -24,6 +24,7 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
     private TextView x2Text;
 
     private VibrationManager vibrationManager;
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
         x2Text = findViewById(R.id.x2);
 
         vibrationManager = new VibrationManager(this);
+        soundManager = new SoundManager(this);
 
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +76,7 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
                         x1Text.setText("-");
                         x2Text.setText("-");
                     }
+                    soundManager.playSuccessSound();
                     vibrationManager.vibrateSuccess();
 
                 }catch (NumberFormatException e){
@@ -82,6 +85,7 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
                             "Пожалуйста, введите корректные значения.",
                             Toast.LENGTH_SHORT
                     ).show();
+                    soundManager.playErrorSound();
                     vibrationManager.vibrateError();
                 }
 

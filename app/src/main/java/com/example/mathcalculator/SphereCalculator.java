@@ -21,6 +21,7 @@ public class SphereCalculator extends AppCompatActivity {
     private TextView volumeText;
 
     private VibrationManager vibrationManager;
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class SphereCalculator extends AppCompatActivity {
         volumeText = findViewById(R.id.volume);
 
         vibrationManager = new VibrationManager(this);
+        soundManager = new SoundManager(this);
 
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +51,7 @@ public class SphereCalculator extends AppCompatActivity {
                     double volume = (4 * Math.PI * Math.pow(radius,3))/3;
                     areaText.setText(String.format("%.2f", area));
                     volumeText.setText(String.format("%.2f", volume));
+                    soundManager.playSuccessSound();
                     vibrationManager.vibrateSuccess();
                 } catch (NumberFormatException e){
                     Toast.makeText(
@@ -56,6 +59,7 @@ public class SphereCalculator extends AppCompatActivity {
                             "Пожалуйста, введите корректное значение радиуса.",
                             Toast.LENGTH_SHORT
                     ).show();
+                    soundManager.playErrorSound();
                     vibrationManager.vibrateError();
                 }
             }

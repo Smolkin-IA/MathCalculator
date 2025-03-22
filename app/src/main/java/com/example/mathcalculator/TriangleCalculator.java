@@ -26,6 +26,7 @@ public class TriangleCalculator extends AppCompatActivity {
     private TextView gammaText;
 
     private VibrationManager vibrationManager;
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class TriangleCalculator extends AppCompatActivity {
         gammaText = findViewById(R.id.gamma);
 
         vibrationManager = new VibrationManager(this);
+        soundManager = new SoundManager(this);
 
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +80,7 @@ public class TriangleCalculator extends AppCompatActivity {
                         betaText.setText(String.format("%.2f", beta) + "°");
                         gammaText.setText(String.format("%.2f", gamma) + "°");
                     }
+                    soundManager.playSuccessSound();
                     vibrationManager.vibrateSuccess();
                 }catch (NumberFormatException e){
                     Toast.makeText(
@@ -85,6 +88,7 @@ public class TriangleCalculator extends AppCompatActivity {
                             "Пожалуйста, введите корректные значения.",
                             Toast.LENGTH_SHORT
                     ).show();
+                    soundManager.playErrorSound();
                     vibrationManager.vibrateError();
                 }
             }

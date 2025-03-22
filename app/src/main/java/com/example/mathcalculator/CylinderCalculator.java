@@ -24,6 +24,7 @@ public class CylinderCalculator extends AppCompatActivity {
     private TextView volumeText;
 
     private VibrationManager vibrationManager;
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class CylinderCalculator extends AppCompatActivity {
         volumeText = findViewById(R.id.volume);
 
         vibrationManager = new VibrationManager(this);
+        soundManager = new SoundManager(this);
 
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -63,15 +65,19 @@ public class CylinderCalculator extends AppCompatActivity {
                     fullAreaText.setText(String.format("%.2f", fullArea));
                     volumeText.setText(String.format("%.2f", volume));
 
+                    soundManager.playSuccessSound();
                     vibrationManager.vibrateSuccess();
+
 
                 } catch (NumberFormatException e) {
                     Toast.makeText(
                             CylinderCalculator.this,
-                            "Пожалуйста, введите корректные значения для высоты и радиуса.",
+                            "Пожалуйста, введите корректные значения.",
                             Toast.LENGTH_SHORT
                     ).show();
+
                     vibrationManager.vibrateError();
+                    soundManager.playErrorSound();
                 }
             }
         });

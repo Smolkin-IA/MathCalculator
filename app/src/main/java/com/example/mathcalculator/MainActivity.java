@@ -2,6 +2,8 @@ package com.example.mathcalculator;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        soundManager = new SoundManager(this);
+
         MaterialCardView cylinderCard = findViewById(R.id.cylinder_card);
         cylinderCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundManager.playClickSound();
                 Intent intent = new Intent(MainActivity.this, CylinderCalculator.class);
                 startActivity(intent);
             }
@@ -38,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         coneCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundManager.playClickSound();
                 Intent intent = new Intent(MainActivity.this, ConeCalculator.class);
                 startActivity(intent);
             }
@@ -47,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         sphereCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundManager.playClickSound();
                 Intent intent = new Intent(MainActivity.this, SphereCalculator.class);
                 startActivity(intent);
             }
@@ -56,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         triangleCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundManager.playClickSound();
                 Intent intent = new Intent(MainActivity.this, TriangleCalculator.class);
                 startActivity(intent);
             }
@@ -65,11 +74,16 @@ public class MainActivity extends AppCompatActivity {
         quadraticEquationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundManager.playClickSound();
                 Intent intent = new Intent(MainActivity.this, QuadraticEquationCalculator.class);
                 startActivity(intent);
             }
         });
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundManager.release();
     }
 }
