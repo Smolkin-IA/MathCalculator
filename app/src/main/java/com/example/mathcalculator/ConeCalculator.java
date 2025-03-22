@@ -25,6 +25,8 @@ public class ConeCalculator extends AppCompatActivity {
     private TextView volumeText;
     private TextView generatorText;
 
+    private VibrationManager vibrationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,8 @@ public class ConeCalculator extends AppCompatActivity {
         fullAreaText = findViewById(R.id.full_area);
         generatorText = findViewById(R.id.generator);
         volumeText = findViewById(R.id.volume);
+
+        vibrationManager = new VibrationManager(this);
 
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +68,15 @@ public class ConeCalculator extends AppCompatActivity {
                    volumeText.setText(String.format("%.2f", volume));
                    generatorText.setText(String.format("%.2f",generator));
 
+                   vibrationManager.vibrateSuccess();
+
                } catch (NumberFormatException e){
                    Toast.makeText(
                            ConeCalculator.this,
                            "Пожалуйста, введите корректные значения.",
                            Toast.LENGTH_SHORT
                    ).show();
+                   vibrationManager.vibrateError();
                }
             }
         });

@@ -25,6 +25,8 @@ public class TriangleCalculator extends AppCompatActivity {
     private TextView betaText;
     private TextView gammaText;
 
+    private VibrationManager vibrationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,8 @@ public class TriangleCalculator extends AppCompatActivity {
         betaText = findViewById(R.id.beta);
         gammaText = findViewById(R.id.gamma);
 
+        vibrationManager = new VibrationManager(this);
+
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +57,6 @@ public class TriangleCalculator extends AppCompatActivity {
                     double a = Double.parseDouble(aEdit.getText().toString());
                     double b = Double.parseDouble(bEdit.getText().toString());
                     double c = Double.parseDouble(cEdit.getText().toString());
-
                     double perimeter = a+b+c;
                     double p = perimeter/2;
                     double area = Math.sqrt(p * (p-a) * (p-b) * (p-c));
@@ -75,13 +78,14 @@ public class TriangleCalculator extends AppCompatActivity {
                         betaText.setText(String.format("%.2f", beta) + "°");
                         gammaText.setText(String.format("%.2f", gamma) + "°");
                     }
-
+                    vibrationManager.vibrateSuccess();
                 }catch (NumberFormatException e){
                     Toast.makeText(
                             TriangleCalculator.this,
                             "Пожалуйста, введите корректные значения.",
                             Toast.LENGTH_SHORT
                     ).show();
+                    vibrationManager.vibrateError();
                 }
             }
         });

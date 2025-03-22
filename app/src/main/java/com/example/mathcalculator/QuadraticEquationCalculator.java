@@ -23,6 +23,8 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
     private TextView x1Text;
     private TextView x2Text;
 
+    private VibrationManager vibrationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
         x1Text = findViewById(R.id.x1);
         x2Text = findViewById(R.id.x2);
 
+        vibrationManager = new VibrationManager(this);
+
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +52,6 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
                     double a = Double.parseDouble(aEdit.getText().toString());
                     double b = Double.parseDouble(bEdit.getText().toString());
                     double c = Double.parseDouble(cEdit.getText().toString());
-
                     double d = Math.pow(b,2) - 4 * a * c;
 
                     if(d > 0){
@@ -71,6 +74,7 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
                         x1Text.setText("-");
                         x2Text.setText("-");
                     }
+                    vibrationManager.vibrateSuccess();
 
                 }catch (NumberFormatException e){
                     Toast.makeText(
@@ -78,12 +82,11 @@ public class QuadraticEquationCalculator extends AppCompatActivity {
                             "Пожалуйста, введите корректные значения.",
                             Toast.LENGTH_SHORT
                     ).show();
+                    vibrationManager.vibrateError();
                 }
 
             }
         });
-
-
 
         ImageButton arrowBack = findViewById(R.id.arrow_back);
         arrowBack.setOnClickListener(new View.OnClickListener() {

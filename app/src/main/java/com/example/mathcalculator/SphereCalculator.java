@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,8 @@ public class SphereCalculator extends AppCompatActivity {
     private EditText radiusEdit;
     private TextView areaText;
     private TextView volumeText;
+
+    private VibrationManager vibrationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +37,27 @@ public class SphereCalculator extends AppCompatActivity {
         areaText = findViewById(R.id.area);
         volumeText = findViewById(R.id.volume);
 
+        vibrationManager = new VibrationManager(this);
+
         Button calculateButton = findViewById(R.id.calculate_btn);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double radius = Double.parseDouble(radiusEdit.getText().toString());
-
-                double area = 4 * Math.PI * Math.pow(radius,2);
-                double volume = (4 * Math.PI * Math.pow(radius,3))/3;
-
-                areaText.setText(String.format("%.2f", area));
-                volumeText.setText(String.format("%.2f", volume));
+                try {
+                    double radius = Double.parseDouble(radiusEdit.getText().toString());
+                    double area = 4 * Math.PI * Math.pow(radius,2);
+                    double volume = (4 * Math.PI * Math.pow(radius,3))/3;
+                    areaText.setText(String.format("%.2f", area));
+                    volumeText.setText(String.format("%.2f", volume));
+                    vibrationManager.vibrateSuccess();
+                } catch (NumberFormatException e){
+                    Toast.makeText(
+                            SphereCalculator.this,
+                            "Пожалуйста, введите корректное значение радиуса.",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                    vibrationManager.vibrateError();
+                }
             }
         });
 
