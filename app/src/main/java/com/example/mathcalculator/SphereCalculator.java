@@ -56,7 +56,7 @@ public class SphereCalculator extends AppCompatActivity {
                 } catch (NumberFormatException e){
                     Toast.makeText(
                             SphereCalculator.this,
-                            "Пожалуйста, введите корректное значение радиуса.",
+                            R.string.error_message,
                             Toast.LENGTH_SHORT
                     ).show();
                     soundManager.playErrorSound();

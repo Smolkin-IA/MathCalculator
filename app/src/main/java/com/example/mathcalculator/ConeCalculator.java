@@ -76,7 +76,7 @@ public class ConeCalculator extends AppCompatActivity {
                } catch (NumberFormatException e){
                    Toast.makeText(
                            ConeCalculator.this,
-                           "Пожалуйста, введите корректные значения.",
+                           R.string.error_message,
                            Toast.LENGTH_SHORT
                    ).show();
                    soundManager.playErrorSound();

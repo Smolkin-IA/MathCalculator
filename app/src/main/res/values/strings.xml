@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">MathCalculator</string>
+    <string name="title">Available Calculators:</string>
+    <string name="cylinder_card">Cylinder area and volume</string>
+    <string name="cone_card">The area and volume of the cone</string>
+    <string name="sphere_card">The area and volume of the sphere</string>
+    <string name="triangle_card">The area perimeter and angles of the triangle</string>
+    <string name="equation_card">Quadratic equation</string>
+    <string name="title_cone">Cone calculator</string>
+    <string name="designations">Designations:</string>
+    <string name="radius">r - radius</string>
+    <string name="height">h - height</string>
+    <string name="generatrix">l - formative</string>
+    <string name="initial_data">Initial data:</string>
+    <string name="h" translatable="false">h =</string>
+    <string name="r" translatable="false">r =</string>
+    <string name="calculation">Calculation:</string>
+    <string name="base_area">S (base):</string>
+    <string name="side_area">S (side):</string>
+    <string name="full_area">S (full):</string>
+    <string name="v" translatable="false">V:</string>
+    <string name="l" translatable="false">l :</string>
+    <string name="calculate">Calculate</string>
+    <string name="title_cylinder">Cylinder calculator</string>
+    <string name="title_equation">Quadratic equation</string>
+    <string name="a" translatable="false">a =</string>
+    <string name="b" translatable="false">b =</string>
+    <string name="c" translatable="false">c =</string>
+    <string name="x1" translatable="false">X1:</string>
+    <string name="x2" translatable="false">X2:</string>
+    <string name="title_sphere">Sphere calculator</string>
+    <string name="s" translatable="false">S:</string>
+    <string name="title_triangle">Triangle calculator</string>
+    <string name="sides">a,b,c - sides</string>
+    <string name="angles">α,β,γ - angles</string>
+    <string name="p" translatable="false">P:</string>
+    <string name="alpha" translatable="false">α:</string>
+    <string name="beta" translatable="false">β:</string>
+    <string name="gamma" translatable="false">γ:</string>
+    <string name="change_language">Change language</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_message">Please enter the correct values</string>
 </resources>

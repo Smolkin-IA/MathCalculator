@@ -85,7 +85,7 @@ public class TriangleCalculator extends AppCompatActivity {
                 }catch (NumberFormatException e){
                     Toast.makeText(
                             TriangleCalculator.this,
-                            "Пожалуйста, введите корректные значения.",
+                            R.string.error_message,
                             Toast.LENGTH_SHORT
                     ).show();
                     soundManager.playErrorSound();

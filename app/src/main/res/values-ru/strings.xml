@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MathCalculator</string>
+    <string name="title">Доступные калькуляторы:</string>
+    <string name="cylinder_card">Площадь и объём цилиндра</string>
+    <string name="cone_card">Площадь и объём конуса</string>
+    <string name="sphere_card">Площадь и объём сферы</string>
+    <string name="triangle_card">Площадь периметр и углы треугольника</string>
+    <string name="equation_card">Квадратное уравнение</string>
+    <string name="title_cone">Калькулятор конуса</string>
+    <string name="designations">Обозначения:</string>
+    <string name="radius">r - радиус осн.</string>
+    <string name="height">h - высота</string>
+    <string name="generatrix">l - образующая</string>
+    <string name="initial_data">Исходные данные:</string>
+    <string name="calculation">Рассчёт:</string>
+    <string name="base_area">S (основания):</string>
+    <string name="side_area">S (боковая):</string>
+    <string name="full_area">S (полная):</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="title_cylinder">Калькулятор цилиндра</string>
+    <string name="title_equation">Квадратное уравнение</string>
+    <string name="title_sphere">Калькулятор сферы</string>
+    <string name="title_triangle">Калькулятор треугольника</string>
+    <string name="sides">a,b,c - стороны</string>
+    <string name="angles">α,β,γ - углы</string>
+    <string name="change_language">Сменить язык</string>
+    <string name="cancel">Отмена</string>
+    <string name="error_message">Пожалуйста, введите корректные значения</string>
+</resources>

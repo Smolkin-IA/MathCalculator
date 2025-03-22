@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Квадратное уравнение"
+                android:text="@string/title_equation"
                 android:textSize="25sp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"/>
@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Исходные данные:"
+                    android:text="@string/initial_data"
                     android:textSize="25sp"
                     android:layout_marginBottom="10dp"/>
 
@@ -75,7 +75,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:text="a ="
+                        android:text="@string/a"
                         android:textSize="25sp"
                         android:layout_gravity="center_vertical"/>
 
@@ -95,7 +95,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:text="b ="
+                        android:text="@string/b"
                         android:textSize="25sp"
                         android:layout_gravity="center_vertical"/>
 
@@ -115,7 +115,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:text="c ="
+                        android:text="@string/c"
                         android:textSize="25sp"
                         android:layout_gravity="center_vertical"/>
 
@@ -149,7 +149,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Рассчёт:"
+                    android:text="@string/calculation"
                     android:textSize="25sp"
                     android:layout_marginBottom="10dp"/>
 
@@ -160,7 +160,7 @@
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="X1:"
+                        android:text="@string/x1"
                         android:textSize="25sp"/>
 
                     <TextView
@@ -178,7 +178,7 @@
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="X2:"
+                        android:text="@string/x2"
                         android:textSize="25sp"/>
 
                     <TextView
@@ -198,11 +198,11 @@
             app:strokeColor="@color/black"
             app:backgroundTint="@color/white"
             android:textColor="@color/black"
-            app:strokeWidth="3px"
+            app:strokeWidth="1dp"
             app:cornerRadius="10dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            android:text="Рассчитать"
+            android:text="@string/calculate"
             android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>

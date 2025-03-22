@@ -72,7 +72,7 @@ public class CylinderCalculator extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     Toast.makeText(
                             CylinderCalculator.this,
-                            "Пожалуйста, введите корректные значения.",
+                            R.string.error_message,
                             Toast.LENGTH_SHORT
                     ).show();
 

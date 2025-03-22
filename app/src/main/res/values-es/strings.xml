@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MathCalculator</string>
+    <string name="title">Calculadoras disponibles:</string>
+    <string name="cylinder_card">Área y volumen del cilindro</string>
+    <string name="cone_card">Área y volumen del cono</string>
+    <string name="sphere_card">Área y volumen de la esfera</string>
+    <string name="triangle_card">Área perímetro y ángulos del triángulo</string>
+    <string name="equation_card">Ecuación cuadrática</string>
+    <string name="title_cone">Calculadora de cono</string>
+    <string name="designations">Designación:</string>
+    <string name="radius">r - radio de base</string>
+    <string name="height">h - altura</string>
+    <string name="generatrix">I - componente</string>
+    <string name="initial_data">Datos iniciales:</string>
+    <string name="calculation">Cálculo:</string>
+    <string name="base_area">S (base):</string>
+    <string name="side_area">S (lateral):</string>
+    <string name="full_area">S (completa):</string>
+    <string name="calculate">Calcular</string>
+    <string name="title_cylinder">Calculadora de cilindro</string>
+    <string name="title_equation">Ecuación cuadrática</string>
+    <string name="title_sphere">Calculadora de esfera</string>
+    <string name="title_triangle">Calculadora de triángulo</string>
+    <string name="sides">a,b,c - partes</string>
+    <string name="angles">α,β,γ - esquinas</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="cancel">Cancelación</string>
+    <string name="error_message">Por favor, introduzca los valores correctos</string>
+</resources>
